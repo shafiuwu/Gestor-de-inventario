@@ -1,7 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 
-// --- COMPONENTE MODAL (Puedes extraerlo a otro archivo luego) ---
 const ModalMovimiento = ({ productos, onClose, onSave }) => {
   const [formData, setFormData] = useState({
     producto_id: '',
@@ -88,7 +87,7 @@ const ModalMovimiento = ({ productos, onClose, onSave }) => {
 // --- COMPONENTE PRINCIPAL ---
 const Movimientos = () => {
   const [movimientos, setMovimientos] = useState([]);
-  const [productos, setProductos] = useState([]); // Para el select del modal
+  const [productos, setProductos] = useState([]); 
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -96,7 +95,6 @@ const Movimientos = () => {
   const fetchData = async () => {
     try {
       setLoading(true);
-      // Traemos movimientos y productos (para el modal) en paralelo
       const [resMov, resProd] = await Promise.all([
         axios.get('http://localhost:3000/movimientos'),
         axios.get('http://localhost:3000/productos')
@@ -119,7 +117,7 @@ const Movimientos = () => {
     try {
       await axios.post('http://localhost:3000/movimientos', datos);
       setIsModalOpen(false);
-      fetchData(); // Recargamos todo para ver el nuevo movimiento y el stock actualizado
+      fetchData(); 
       alert("¡Movimiento registrado con éxito!");
     } catch (err) {
       const msg = err.response?.data?.message || "Error al crear movimiento";
@@ -211,8 +209,7 @@ const Movimientos = () => {
           </table>
         </div>
       </div>
-
-      {/* Renderizado condicional del Modal */}
+      
       {isModalOpen && (
         <ModalMovimiento 
           productos={productos} 
