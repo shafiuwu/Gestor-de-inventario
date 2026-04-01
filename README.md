@@ -1,6 +1,6 @@
 # 📦 Sistema de Gestión de Inventario y Movimientos
 
-Un sistema **Full Stack** robusto para el control de stock en tiempo real. Permite gestionar productos, categorías y registrar movimientos de entrada/salida asegurando la integridad de los datos mediante transacciones SQL.
+Un sistema **Full Stack** para el control de stock en tiempo real. Permite gestionar productos, categorías y registrar movimientos de entrada/salida asegurando la integridad de los datos mediante transacciones SQL.
 
 
 
