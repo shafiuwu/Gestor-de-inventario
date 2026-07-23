@@ -40,5 +40,3 @@ Crea una base de datos en PostgreSQL y ejecuta el script que esta en la carpeta 
 En la consola de comando colocar "npm run dev" en el front-end y back-end
 
 
-Desarrollado con ❤️ por [Shafiu]
-
